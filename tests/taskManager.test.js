@@ -35,3 +35,12 @@ test("deve concluir uma tarefa existente", () => {
   const task = manager.listTasks()[0];
   expect(task.completed).toBe(true);
 });
+
+test("deve remover uma tarefa existente", () => {
+  const manager = new TaskManager();
+  manager.addTask("Estudar", "JavaScript TDD");
+  manager.removeTask("Estudar");
+
+  const tasks = manager.listTasks();
+  expect(tasks.length).toBe(0);
+});

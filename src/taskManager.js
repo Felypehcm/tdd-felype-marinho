@@ -39,4 +39,16 @@ export default class TaskManager {
 
     task.completed = true;
   }
+
+  removeTask(title) {
+    const initialLength = this.tasks.length;
+
+    this.tasks = this.tasks.filter(
+      (t) => t.title.toLowerCase() !== title.trim().toLowerCase()
+    );
+
+    if (this.tasks.length === initialLength) {
+      throw new Error("Tarefa não encontrada");
+    }
+  }
 }
