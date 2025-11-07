@@ -8,6 +8,13 @@ export default class TaskManager {
       throw new Error("Título é obrigatório");
     }
 
+    const existing = this.tasks.find(
+      (t) => t.title.toLowerCase() === title.trim().toLowerCase()
+    );
+    if (existing) {
+      throw new Error("Já existe uma tarefa com este título");
+    }
+
     const task = {
       title: title.trim(),
       description: description.trim(),

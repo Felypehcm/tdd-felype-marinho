@@ -18,3 +18,11 @@ test("deve adicionar uma tarefa com sucesso", () => {
   expect(tasks[0].description).toBe("Ir ao supermercado");
   expect(tasks[0].completed).toBe(false);
 });
+
+test("não deve permitir tarefas com o mesmo título", () => {
+  const manager = new TaskManager();
+  manager.addTask("Lavar carro", "no sábado");
+
+  expect(() => manager.addTask("Lavar carro", "domingo"))
+    .toThrow("Já existe uma tarefa com este título");
+});
