@@ -25,7 +25,7 @@ Cada funcionalidade foi desenvolvida seguindo o ciclo **RED → GREEN → REFACT
 ## Como executar os testes
 
 1. Instalar as dependências do projeto:
-   ```bash
+
    npm install
 
 2. Executar os testes automatizados:
