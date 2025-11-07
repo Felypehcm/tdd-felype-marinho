@@ -27,4 +27,16 @@ export default class TaskManager {
   listTasks() {
     return this.tasks;
   }
+
+  completeTask(title) {
+    const task = this.tasks.find(
+      (t) => t.title.toLowerCase() === title.trim().toLowerCase()
+    );
+
+    if (!task) {
+      throw new Error("Tarefa não encontrada");
+    }
+
+    task.completed = true;
+  }
 }
